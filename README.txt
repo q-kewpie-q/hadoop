@@ -1,12 +1,12 @@
 ## How to Scan the Project:
 1. To compile, run:
 ```
-mvn clean compile test-compile -DskipTests
+mvn -pl hadoop-maven-plugins -am install -DskipTests
 ```
 2. To initate the scan, run:
 ```
-mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
-  -DskipTests
+MAVEN_OPTS="-Xmx4g -XX:+UseG1GC" 
+mvn org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -DskipTests
 ```
 
 For the latest information about Hadoop, please visit our website at:
